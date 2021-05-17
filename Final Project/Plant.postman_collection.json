@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "5d2da255-857a-47e8-9303-7c9d770cc2f0",
+		"name": "Plant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/plant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"plant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Plant data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/plant?name=rose",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"plant"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "rose"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Plant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kraprow\",\r\n    \"pic\": \"./static/pic/kraprow.jpg\",\r\n    \"price\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/plant",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"plant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Plant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"key\" : \"kraprow\",\r\n        \"name\": \"kraprow\",\r\n        \"pic\": \"./static/pic/kraprow.jpg\",\r\n        \"price\": 911\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/plant",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"plant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Del Plant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/plant/delete/kraprow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"plant",
+						"delete",
+						"kraprow"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
