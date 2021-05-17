@@ -1,0 +1,98 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Plant API
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: http://localhost:5000
+paths:
+  /plant:
+    get:
+      tags:
+        - Plant API
+      summary: Plant API
+      parameters:
+      - name: name
+        in: query
+        description: plant name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: search success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/plantSchemas"
+    post:
+        tags:
+          - Plant API
+        summary: Plant API create new plant
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/plantSchemas"
+        responses:
+          '200':
+            description: OK
+    put:
+      tags:
+        - Plant API
+      summary: Plant API Edit plant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/editplantSchema"
+      responses:
+        '200':
+          description: Successful create Plant
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/plantSchemas"
+                
+  /plant/delete/{name}:
+    delete:
+      tags:
+          - Plant API
+      summary: Plant API Delete plant
+      parameters:
+        - name: name
+          in: path
+          description: Plant name
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful create Plant
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/plantSchemas"
+components:
+  schemas:
+    plantSchemas:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        pic:
+          type: string
+    editplantSchema:
+      type: object
+      properties:
+        key:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+        pic:
+          type: string
